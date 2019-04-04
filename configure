@@ -625,6 +625,8 @@ ac_includes_default="\
 ac_subst_vars='am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
+ENBALE_THREAD_TEST_FALSE
+ENBALE_THREAD_TEST_TRUE
 LIBOBJS
 EGREP
 GREP
@@ -720,6 +722,7 @@ ac_user_opts='
 enable_option_checking
 enable_silent_rules
 enable_dependency_tracking
+with_thread_test
 '
       ac_precious_vars='build_alias
 host_alias
@@ -1361,6 +1364,11 @@ Optional Features:
                           do not reject slow dependency extractors
   --disable-dependency-tracking
                           speeds up one-time build
+
+Optional Packages:
+  --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+  --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+  --with-thread_test      support thread test
 
 Some influential environment variables:
   CC          C compiler command
@@ -4570,6 +4578,25 @@ fi
 done
 
 
+
+# Check whether --with-thread_test was given.
+if test "${with_thread_test+set}" = set; then :
+  withval=$with_thread_test; thread_test=yes
+else
+  thread_test=no
+fi
+
+
+ if test "$thread_test" = yes; then
+  ENBALE_THREAD_TEST_TRUE=
+  ENBALE_THREAD_TEST_FALSE='#'
+else
+  ENBALE_THREAD_TEST_TRUE='#'
+  ENBALE_THREAD_TEST_FALSE=
+fi
+
+
+
 ac_config_files="$ac_config_files Makefile lib/Makefile test/Makefile"
 
 
@@ -4704,6 +4731,10 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${am__fastdepCC_TRUE}" && test -z "${am__fastdepCC_FALSE}"; then
   as_fn_error $? "conditional \"am__fastdepCC\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
+if test -z "${ENBALE_THREAD_TEST_TRUE}" && test -z "${ENBALE_THREAD_TEST_FALSE}"; then
+  as_fn_error $? "conditional \"ENBALE_THREAD_TEST\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 
