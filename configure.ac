@@ -24,8 +24,9 @@ AC_CHECK_HEADERS([stdlib.h string.h sys/time.h unistd.h])
 AC_FUNC_MALLOC
 AC_CHECK_FUNCS([clock_gettime memset select])
 
-AC_ARG_WITH(thread_test, AS_HELP_STRING([--with-thread_test], [support thread test]), [thread_test=yes], [thread_test=no])
+#AC_ARG_WITH(thread_test, AS_HELP_STRING([--with-thread_test], [support thread test]), [thread_test=yes], [thread_test=no])
 
+AC_ARG_ENABLE(thread_test, AS_HELP_STRING([--enable-thread_test], [support thread test]), [thread_test=yes], [thread_test=no])
 AM_CONDITIONAL([ENBALE_THREAD_TEST], [test "$thread_test" = yes])
 
 
