@@ -1,0 +1,6 @@
+
+SUBDIRS = lib test
+
+
+
+
